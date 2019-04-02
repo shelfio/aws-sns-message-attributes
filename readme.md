@@ -28,6 +28,8 @@ transformMessageAttributes({
  */
 ```
 
+_Note:_ This library does not support binary values
+
 ## License
 
 MIT © [Shelf](https://shelf.io)
