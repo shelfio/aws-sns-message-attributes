@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "module": "commonjs",
+    "target": "esnext",
+    "sourceMap": false,
+    "isolatedModules": true,
+    "esModuleInterop": true
+  },
+  "exclude": ["node_modules", "**/*.test.ts", "**/*.test.js"],
+  "include": ["src"]
+}
