@@ -1,20 +1,13 @@
+import {MessageAttributeMap, MessageAttributeValue} from 'aws-sdk/clients/sns';
+
 type attributeType = 'Number' | 'String.Array' | 'String';
 
-interface Attribute {
-  DataType: attributeType;
-  StringValue: string | number;
-}
-
-interface MessageAttributes {
-  [key: string]: Attribute;
-}
-
 interface InputParams {
-  [key: string]: object;
+  [key: string]: number | string | object;
 }
 
-export function transformMessageAttributes(messageAttributes: InputParams): MessageAttributes {
-  const newMessageAttributes: MessageAttributes = {};
+export function transformMessageAttributes(messageAttributes: InputParams): MessageAttributeMap {
+  const newMessageAttributes: MessageAttributeMap = {};
 
   for (let key in messageAttributes) {
     const value = messageAttributes[key];
@@ -24,7 +17,7 @@ export function transformMessageAttributes(messageAttributes: InputParams): Mess
   return newMessageAttributes;
 }
 
-function getAttribute(value): Attribute {
+function getAttribute(value): MessageAttributeValue {
   const attributeType = getAttributeType(value);
 
   return {
