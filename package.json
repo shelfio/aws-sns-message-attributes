@@ -1,6 +1,6 @@
 {
   "name": "@shelf/aws-sns-message-attributes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Transform JSON into AWS SNS message attributes format",
   "license": "MIT",
   "repository": "shelfio/aws-sns-message-attributes",
