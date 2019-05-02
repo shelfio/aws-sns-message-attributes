@@ -42,7 +42,7 @@
     "@babel/preset-typescript": "7.3.3",
     "@shelf/eslint-config": "0.3.2",
     "@types/jest": "24.0.12",
-    "@types/node": "11.13.8",
+    "@types/node": "11.13.9",
     "aws-sdk": "2.290.0",
     "babel-jest": "24.7.1",
     "eslint": "5.16.0",
