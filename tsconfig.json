@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "module": "commonjs",
-    "target": "esnext",
-    "sourceMap": false,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "isolatedModules": true,
-    "esModuleInterop": true
+    "module": "commonjs",
+    "skipLibCheck": true,
+    "sourceMap": false,
+    "target": "esnext"
   },
-  "exclude": ["node_modules", "**/*.test.ts"],
+  "exclude": ["node_modules"],
   "include": ["src"]
 }
