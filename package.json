@@ -2,38 +2,51 @@
   "name": "@shelf/aws-sns-message-attributes",
   "version": "1.0.2",
   "description": "Transform JSON into AWS SNS message attributes format",
-  "license": "MIT",
+  "keywords": [
+    "aws",
+    "message attributes",
+    "sns"
+  ],
   "repository": "shelfio/aws-sns-message-attributes",
+  "license": "MIT",
   "author": {
     "name": "Vlad Holubiev",
     "email": "vlad@shelf.io",
     "url": "shelf.io"
   },
-  "engines": {
-    "node": ">=8"
-  },
+  "files": [
+    "lib"
+  ],
+  "main": "lib",
+  "types": "lib/index.d.ts",
   "scripts": {
     "build": "rm -rf lib/ && yarn build:types && babel src --out-dir lib --ignore '**/*.test.ts' --extensions '.ts'",
     "build:types": "tsc --emitDeclarationOnly --declaration --isolatedModules false --declarationDir lib",
     "coverage": "jest --coverage",
-    "lint": "eslint . --fix",
+    "lint": "eslint . --fix --ext .js,.json,.ts --quiet",
+    "lint:ci": "eslint . --ext .js,.json,.ts --quiet",
     "prepack": "yarn build",
     "test": "jest src",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch"
   },
-  "main": "lib",
-  "files": [
-    "lib"
-  ],
-  "types": "lib/index.d.ts",
-  "keywords": [
-    "aws",
-    "sns",
-    "message attributes"
-  ],
-  "peerDependencies": {
-    "aws-sdk": "2.x.x"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{html,json,md,yml}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{js,ts}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "devDependencies": {
     "@babel/cli": "7.6.0",
@@ -52,23 +65,11 @@
     "prettier": "1.18.2",
     "typescript": "3.6.3"
   },
-  "jest": {
-    "testEnvironment": "node"
+  "peerDependencies": {
+    "aws-sdk": "2.x.x"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,ts}": [
-      "eslint --fix",
-      "git add"
-    ],
-    "*.{html,json,md,yml}": [
-      "prettier --write",
-      "git add"
-    ]
+  "engines": {
+    "node": ">=8"
   },
   "publishConfig": {
     "access": "public"

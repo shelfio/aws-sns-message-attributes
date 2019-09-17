@@ -9,7 +9,7 @@ interface InputParams {
 export function transformMessageAttributes(messageAttributes: InputParams): MessageAttributeMap {
   const newMessageAttributes: MessageAttributeMap = {};
 
-  for (let key in messageAttributes) {
+  for (const key in messageAttributes) {
     const value = messageAttributes[key];
     newMessageAttributes[key] = getAttribute(value);
   }
