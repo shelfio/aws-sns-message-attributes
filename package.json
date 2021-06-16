@@ -45,6 +45,10 @@
       "git add"
     ]
   },
+  "babel": {
+    "extends": "@shelf/babel-config/backend"
+  },
+  "prettier": "@shelf/prettier-config",
   "jest": {
     "testEnvironment": "node"
   },
@@ -73,9 +77,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "prettier": "@shelf/prettier-config",
-  "babel": {
-    "extends": "@shelf/babel-config/backend"
   }
 }
