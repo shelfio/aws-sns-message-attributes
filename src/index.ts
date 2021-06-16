@@ -1,9 +1,10 @@
 import {MessageAttributeMap, MessageAttributeValue} from 'aws-sdk/clients/sns';
 
 type attributeType = 'Number' | 'String.Array' | 'String';
+type attribute = number | string | Array<string>;
 
 interface InputParams {
-  [key: string]: number | string | object;
+  [key: string]: attribute;
 }
 
 export function transformMessageAttributes(messageAttributes: InputParams): MessageAttributeMap {
@@ -17,16 +18,16 @@ export function transformMessageAttributes(messageAttributes: InputParams): Mess
   return newMessageAttributes;
 }
 
-function getAttribute(value): MessageAttributeValue {
+function getAttribute(value: attribute): MessageAttributeValue {
   const attributeType = getAttributeType(value);
 
   return {
     DataType: attributeType,
-    StringValue: attributeType === 'String.Array' ? JSON.stringify(value) : value
+    StringValue: attributeType === 'String.Array' ? JSON.stringify(value) : value.toString(),
   };
 }
 
-function getAttributeType(value): attributeType {
+function getAttributeType(value: attribute): attributeType {
   if (typeof value === 'number') {
     return 'Number';
   }
