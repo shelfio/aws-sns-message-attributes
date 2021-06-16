@@ -23,7 +23,7 @@ function getAttribute(value: attribute): MessageAttributeValue {
 
   return {
     DataType: attributeType,
-    StringValue: attributeType === 'String.Array' ? JSON.stringify(value) : value,
+    StringValue: attributeType === 'String.Array' ? JSON.stringify(value) : value.toString(),
   };
 }
 
