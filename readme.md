@@ -30,6 +30,15 @@ transformMessageAttributes({
 
 _Note:_ This library does not support binary values
 
+## Publish
+
+```sh
+$ git checkout master
+$ yarn version
+$ yarn publish
+$ git push origin master --tags
+```
+
 ## License
 
 MIT © [Shelf](https://shelf.io)
