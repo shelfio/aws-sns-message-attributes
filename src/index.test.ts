@@ -9,7 +9,7 @@ it('should transform message attributes', () => {
 
   expect(result).toEqual({
     array: {DataType: 'String.Array', StringValue: '["hello","world"]'},
-    number: {DataType: 'Number', StringValue: 1},
+    number: {DataType: 'Number', StringValue: '1'},
     string: {DataType: 'String', StringValue: 'hello'},
   });
 });
