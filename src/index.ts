@@ -32,10 +32,6 @@ function getAttributeType(value: attribute): attributeType {
     return 'Number';
   }
 
-  if (typeof value === 'boolean') {
-    return 'String';
-  }
-
   if (Array.isArray(value)) {
     return 'String.Array';
   }
