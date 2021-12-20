@@ -12,6 +12,6 @@ it('should transform message attributes', () => {
     array: {DataType: 'String.Array', StringValue: '["hello","world"]'},
     number: {DataType: 'Number', StringValue: '1'},
     string: {DataType: 'String', StringValue: 'hello'},
-    bool: {DataType: 'Boolean', StringValue: 'true'},
+    bool: {DataType: 'String', StringValue: 'true'},
   });
 });
