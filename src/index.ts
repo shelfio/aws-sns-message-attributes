@@ -1,7 +1,7 @@
 import {MessageAttributeMap, MessageAttributeValue} from 'aws-sdk/clients/sns';
 
-type attributeType = 'Number' | 'String.Array' | 'String';
-type attribute = number | string | Array<string>;
+type attributeType = 'Number' | 'String.Array' | 'String' | 'Boolean';
+type attribute = number | string | Array<string> | boolean;
 
 interface InputParams {
   [key: string]: attribute;
@@ -30,6 +30,10 @@ function getAttribute(value: attribute): MessageAttributeValue {
 function getAttributeType(value: attribute): attributeType {
   if (typeof value === 'number') {
     return 'Number';
+  }
+
+  if (typeof value === 'boolean') {
+    return 'Boolean';
   }
 
   if (Array.isArray(value)) {
