@@ -65,7 +65,7 @@
     "aws-sdk": "2.x.x"
   },
   "engines": {
-    "node": ">=12"
+    "node": ">=14"
   },
   "publishConfig": {
     "access": "public"
