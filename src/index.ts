@@ -1,11 +1,11 @@
-import {MessageAttributeMap, MessageAttributeValue} from 'aws-sdk/clients/sns';
+import type {MessageAttributeMap, MessageAttributeValue} from 'aws-sdk/clients/sns';
 
 type attributeType = 'Number' | 'String.Array' | 'String';
 type attribute = number | string | Array<string> | boolean;
 
-interface InputParams {
+type InputParams = {
   [key: string]: attribute;
-}
+};
 
 export function transformMessageAttributes(messageAttributes: InputParams): MessageAttributeMap {
   const newMessageAttributes: MessageAttributeMap = {};
