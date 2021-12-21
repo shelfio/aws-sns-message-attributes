@@ -16,14 +16,16 @@ const {transformMessageAttributes} = require('@shelf/aws-sns-message-attributes'
 transformMessageAttributes({
   string: 'hello',
   array: ['hello', 'world'],
-  number: 1
+  number: 1,
+  bool: true,
 });
 
 /*
 {
   string: {DataType: 'String', StringValue: 'hello'},
   array: {DataType: 'String.Array', StringValue: '["hello","world"]'},
-  number: {DataType: 'Number', StringValue: 1}
+  number: {DataType: 'Number', StringValue: 1},
+  bool: {DataType: 'String', StringValue: 'true'},
 }
  */
 ```

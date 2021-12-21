@@ -1,7 +1,7 @@
 import {MessageAttributeMap, MessageAttributeValue} from 'aws-sdk/clients/sns';
 
 type attributeType = 'Number' | 'String.Array' | 'String';
-type attribute = number | string | Array<string>;
+type attribute = number | string | Array<string> | boolean;
 
 interface InputParams {
   [key: string]: attribute;
