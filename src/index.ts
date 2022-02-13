@@ -15,7 +15,7 @@ type MessageAttributeMap = {
   [key: string]: MessageAttributeValue;
 };
 
-export function transformMessageAttributes(messageAttributes: InputParams) {
+export function transformMessageAttributes(messageAttributes: InputParams): MessageAttributeMap {
   const newMessageAttributes: MessageAttributeMap = {};
 
   for (const key in messageAttributes) {
