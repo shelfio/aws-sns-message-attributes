@@ -1,10 +1,15 @@
-import type {MessageAttributeValue} from '@aws-sdk/client-sns';
+//import type {MessageAttributeValue} from '@aws-sdk/client-sns'; Original type import
 
 type attributeType = 'Number' | 'String.Array' | 'String';
 type attribute = number | string | Array<string> | boolean;
 
 type InputParams = {
   [key: string]: attribute;
+};
+type MessageAttributeValue = {
+  DataType: string | undefined;
+  StringValue?: string;
+  BinaryValue?: Uint8Array;
 };
 type MessageAttributeMap = {
   [key: string]: MessageAttributeValue;
