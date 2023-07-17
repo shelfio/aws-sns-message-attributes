@@ -44,7 +44,7 @@
   "prettier": "@shelf/prettier-config",
   "devDependencies": {
     "@aws-sdk/client-sns": "3.358.0",
-    "@babel/cli": "7.20.7",
+    "@babel/cli": "7.22.9",
     "@babel/core": "7.22.9",
     "@shelf/babel-config": "1.0.2",
     "@shelf/eslint-config": "2.18.0",
